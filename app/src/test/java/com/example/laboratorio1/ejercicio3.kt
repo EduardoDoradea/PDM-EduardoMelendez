@@ -2,7 +2,7 @@ package com.example.laboratorio1
 
 import org.junit.Test
 
-//EJERCICIO 3:
+//Ejercicio 3:
 data class Estudiante(val nombre: String,
                       val carnet: String,
                       val asignatura: String)

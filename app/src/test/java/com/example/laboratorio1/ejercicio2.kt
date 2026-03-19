@@ -1,6 +1,8 @@
 package com.example.laboratorio1
 
 import org.junit.Test
+
+// Ejercicio 2:
 data class Calculadora(val marca: String, val anios: Int, val precio: Double){
     fun sumar(a: Double, b: Double): Double{
         return a+b
@@ -27,8 +29,7 @@ class ejercicio2 {
     @Test
     fun main() {
         val calculadora = Calculadora("Samsung", 2, 500.0)
-
-
+        //dejar estatico todo colocando los datos de forma directa
         println("Datos de la calculadora a venderse: \n" +
                 "Marca: " + calculadora.marca + "\n" +
                 "Anios de vida: " + calculadora.anios + "\n" +
@@ -41,6 +42,5 @@ class ejercicio2 {
         println("Multiplicacion: " + calculadora.multiplicar(5.0, 10.0) + "\n")
         calculadora.division(5.0, 10.0)
         calculadora.division(2.0, 0.0)
-
     }
 }

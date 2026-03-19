@@ -3,11 +3,12 @@ package com.example.laboratorio1
 import org.junit.Test
 
 //Ejercicio 1:
-
+// Agregar la lista de los programas instalados en los atributos de la clase
 data class Computadora(var ram: Int = 0,
                        var memoria: Int = 0,
                        var sistemaOperativo: String = "",
-                       var encendido: Boolean = true){
+                       var encendido: Boolean = true,
+                       var programasInstalados: List<String>){
 
         fun encender() {
             if (!encendido) {
@@ -42,23 +43,26 @@ class ejercicio1{
     @Test
     fun main(){
 
-        val compu = Computadora(16, 512, "Windows 10")
+        val compu = Computadora(16,
+            512,
+            "Windows 10",
+            false,
+            listOf(
+                "Notion 2026",
+                "VS Code 2026",
+                "Spotify 2023",
+                "Facebook 2024",
+                "Photoshop 2025",
+                "Zoom 2026",
+                "Excel 2021"))
 
         println("Ram:" + compu.ram + "\nMemoria:" + compu.memoria + "\nSistema operativo:" + compu.sistemaOperativo + "\n")
 
         compu.encender()
         compu.apagar()
         compu.actualizarCampos(8, 256, "Windows 11")
-        val programasInstalados = listOf(
-            "Notion 2026",
-            "VS Code 2026",
-            "Spotify 2023",
-            "Facebook 2024",
-            "Photoshop 2025",
-            "Zoom 2026",
-            "Excel 2021")
 
-        val añoActual = programasInstalados.filter{it.contains("2026")}
+        val añoActual = compu.programasInstalados.filter({ it.contains("2026") })
 
         println("Aplicaciones del anio 2026" + añoActual)
     }
